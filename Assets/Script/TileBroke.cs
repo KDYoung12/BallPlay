@@ -15,7 +15,7 @@ public class TileBroke : Tile
         // 플레이어의 아래쪽과 티일이 부딪히면 플레이어 점프
         if ( direction == CollisionDirection.Down)
         {
-            movement2D.JumpTo();
+            movement2D.JumpTo(movement2D.jumpForce);
         }
 
         // 타일 삭제

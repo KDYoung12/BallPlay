@@ -29,5 +29,16 @@ public class IntroSceneController : MonoBehaviour
             // "Stage" 씬으로 씬 변경
             SceneLoader.LoadScene("Stage");
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); // 어플리케이션 종료
+#endif
+        }
     }
 }

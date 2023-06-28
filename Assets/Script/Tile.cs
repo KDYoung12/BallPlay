@@ -34,6 +34,8 @@ public abstract class Tile : MonoBehaviour
 
     protected Movement2D movement2D; // 타일과 부딪힌 플레이어를 조작하기 위한 Movement2D
 
+
+    // 가상 메소드
     public virtual void Setup(Movement2D movement2D)
     {
         this.movement2D = movement2D;

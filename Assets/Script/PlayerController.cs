@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         // 플레이어의 위쪽 방향에 충돌이 감지되면
         if ( movement2D.IsCollision.up)
         {
+            CollisionToTile(CollisionDirection.Up);
+        }
+        // 플레이어 아래쪽 방향에 충돌이 감지되면
+        else if ( movement2D.IsCollision.down)
+        {
             CollisionToTile(CollisionDirection.Down);
         }
     }

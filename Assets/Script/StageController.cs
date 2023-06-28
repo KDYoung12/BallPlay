@@ -44,6 +44,20 @@ public class StageController : MonoBehaviour
         stageUI.UpdateTextStage(currentStage);
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); // 어플리케이션 종료
+#endif
+        }
+    }
+
     public void GameClear()
     {
         // Debug.Log("Game Clear");
@@ -53,7 +67,7 @@ public class StageController : MonoBehaviour
 
         // 불러온 index 정보가 "최대 스테이지 개수 - 1 " 보다 작으면
         // 아직 다음 스테이지가 남아있기 때문에
-        if(index < maxStageCount - 1)
+        if (index < maxStageCount - 1)
         {
             // index를 1 증가시키고, 수정된 index 값을 디바이스에 "StageIndex" 키로 저장
             index++;
@@ -67,7 +81,7 @@ public class StageController : MonoBehaviour
         else
         {
             // "Intro" 씬으로 돌아간다. (엔딩이 있으면 엔딩 씬을 로드하도록 수정)
-            SceneLoader.LoadScene("Intro");
+            SceneLoader.LoadScene("Final");
         }
     }
 }
